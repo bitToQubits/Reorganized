@@ -88,7 +88,7 @@ def main():
             projects_ids = []
             users_ids = []
 
-            for project in range(0, number_of_projects):
+            for _ in range(0, number_of_projects):
                 stmt = insert(projectsTable).values(
                     [
                         {

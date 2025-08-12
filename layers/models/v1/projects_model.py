@@ -84,7 +84,8 @@ class ProjectsModel():
         ) \
         .select_from(ProjectsMembershipsTable) \
         .where(ProjectsMembershipsTable.ID_project == membership_object.project_id) \
-        .where(ProjectsMembershipsTable.ID_user == membership_object.user_id)
+        .where(ProjectsMembershipsTable.ID_user == membership_object.user_id) \
+        .where(ProjectsMembershipsTable.ID_company == membership_object.company_id)
 
         project_membership_query_result = await db_session.execute(stmt)
         project_membership_query_result = project_membership_query_result.fetchone()
