@@ -14,6 +14,10 @@ Clone the repo in your directory of preference
 
 Run this command on the root directory of the project to initialize a virtual environment.
 
+`` python -m venv venv ``
+
+Then, activate it.
+
 (for windows users)
 
 `` venv\Scripts\activate ``
@@ -25,6 +29,9 @@ Run this command on the root directory of the project to initialize a virtual en
 Lets install the requirements and mandatory packages with this command
 
 `` pip install -r requirements.txt ``
+
+Known issues
+ -In windows, if you encounter issues from the ``uvloop`` package remove it from your requirements.txt and rerun ``pip install -r requirements.txt``
 
 Finished the installation process, lets proceed to dockerize and initialize our db (this step is optional, if you have already installed postgresql in your sistem, only make sure to create a db for the system with the name of your preference)
 
@@ -60,7 +67,7 @@ POSTGRES_PORT=[Your port, if you followed the docker procedure it must be 5433, 
 POSTGRES_DB=[Your db name]
 ```
 
-Now, lets create the schema (the tables) in our database. Run this command in the root directory.
+Now, lets create the schema (the tables) in our database. Run this command in the root directory  (where you have activated the virtual environment)
 
 `` alembic upgrade head ``
 
@@ -70,7 +77,8 @@ Finally, execute the API with this command (in the root directory of the project
 
 ## Endpoints
 
-To syncronize Reorganized with the Better Group API, execute the ``sincronization.py`` inside the scripts folder.
+To syncronize Reorganized with the Better Group API, execute the ``sincronization.py`` inside the scripts folder. Make sure you execute it with the python executable that is located inside
+the venv folder in your project.
 
 Base Path
 

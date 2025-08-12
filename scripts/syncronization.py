@@ -93,7 +93,7 @@ def main():
                     [
                         {
                             'ID_company': company_id, 
-                            'name': f'Project {project}',
+                            'name': f'Project #{random.randint(1, 999)}',
                             'description': 'Custom description for this project',
                             'created_at': datetime.datetime.now(),
                         }
