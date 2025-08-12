@@ -35,13 +35,13 @@ def main():
     request_session = requests.Session()
 
     try:
-        url_wikipedia = settings.CHALLENGES_API_URL + f'/{settings.CANDIDATE_ID}/users'
+        url_challenge_api = settings.CHALLENGES_API_URL + f'/{settings.CANDIDATE_ID}/users'
 
         request_headers = {
             "X-API-Key": settings.CHALLENGES_API_KEY
         }
 
-        request = request_session.get(url=url_wikipedia, headers=request_headers)
+        request = request_session.get(url=url_challenge_api, headers=request_headers)
         request = request.json()
     except:
         return 0
