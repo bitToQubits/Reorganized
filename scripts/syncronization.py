@@ -110,6 +110,8 @@ def main():
                 projects_ids.append(project_id)
             
             for user in users_of_this_company:
+
+                # For production, we can create a unique constraint over the email
                 stmt = insert(usersTable).values(
                     [
                         {
