@@ -2,8 +2,8 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fastapi.responses import JSONResponse
-from fastapi import FastAPI, Response
-from middleware.routers.main import api_router
+from fastapi import FastAPI
+from middleware.routers.v1.main import api_router
 from utils.config import settings
 from layers.models.v1.core.db_handler import sessionmanager
 from contextlib import asynccontextmanager

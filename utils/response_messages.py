@@ -15,7 +15,8 @@ class ResponseMessages():
         "OFFSET":"You must provide a valid offset for this query.",
         "USER_IS_ALREADY_IN_PROJECT": "This user is already in the specified project",
         "USER_IS_NOT_IN_PROJECT": "This user is not in the specified project",
-        "ID_INTEGRITY": "The IDs must be valid for the reorganized database"
+        "ID_INTEGRITY": "The IDs must be valid for the reorganized database",
+        "PROJECT_NOT_FOUND": "Project not found for the system"
     }
 
 responses = ResponseMessages()

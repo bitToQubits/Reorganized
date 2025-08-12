@@ -72,6 +72,9 @@ class ProjectsModel():
             project_found["project_description"] = project[2]
             project_found["creation_date"] = project[3].strftime("%Y-%m-%d %H:%M:%S")
 
+        if not project_found:
+            raise HTTPException(detail=responses.error["PROJECT_NOT_FOUND"], status_code=404)
+
         return project_found
     
     async def add_user_to_project(self, membership_object: ProjectsMembershipDTO, db_session:AsyncSession):
